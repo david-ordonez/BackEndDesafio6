@@ -1,0 +1,26 @@
+<section class="jumbotron">
+  {{#if productos.length }}
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="thead-light">
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Foto</th>
+      </thead>
+      <tbody>
+        {{#each productos}}
+        <tr>
+          <th scope="row">{{ this.id}}</th>
+          <td>{{ this.title }}</td>
+          <td>{{ this.price }}</td>
+          <td><img width="50" src="{{this.thumbnail }}" alt="{{this.title}}" title="{{this.title}}"></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  {{else}}
+  <div class="alert alert-warning">No se encontraron productos</div>
+  {{/if}}
+</section>
